@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.375rem;
+    --background: 1 0 0;
+    --foreground: 0.13 0 0;
+    --card: 1 0 0;
+    --card-foreground: 0.13 0 0;
+    --popover: 1 0 0;
+    --popover-foreground: 0.13 0 0;
+    --primary: 0.49 0.22 27;
+    --primary-foreground: 1 0 0;
+    --secondary: 0.37 0.13 255;
+    --secondary-foreground: 1 0 0;
+    --muted: 0.97 0 0;
+    --muted-foreground: 0.45 0 0;
+    --accent: 0.49 0.22 27;
+    --accent-foreground: 1 0 0;
+    --destructive: 0.49 0.22 27;
+    --destructive-foreground: 1 0 0;
+    --border: 0.9 0 0;
+    --input: 0.9 0 0;
+    --ring: 0.49 0.22 27;
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 0.985 0 0;
+    --sidebar-foreground: 0.145 0 0;
+    --sidebar-primary: 0.205 0 0;
+    --sidebar-primary-foreground: 0.985 0 0;
+    --sidebar-accent: 0.97 0 0;
+    --sidebar-accent-foreground: 0.205 0 0;
+    --sidebar-border: 0.922 0 0;
+    --sidebar-ring: 0.708 0 0;
+
+    /* Brand tokens */
+    --red: 0.49 0.22 27;
+    --red-bright: 0.53 0.22 27;
+    --blue-dark: 0.37 0.13 255;
+    --dark: 0.13 0 0;
+    --dark-card: 0.17 0 0;
+    --whatsapp: 0.77 0.18 155;
+  }
+
+  .dark {
+    --background: 0.13 0 0;
+    --foreground: 0.985 0 0;
+    --card: 0.17 0 0;
+    --card-foreground: 0.985 0 0;
+    --popover: 0.2 0 0;
+    --popover-foreground: 0.985 0 0;
+    --primary: 0.49 0.22 27;
+    --primary-foreground: 1 0 0;
+    --secondary: 0.37 0.13 255;
+    --secondary-foreground: 1 0 0;
+    --muted: 0.2 0 0;
+    --muted-foreground: 0.65 0 0;
+    --accent: 0.49 0.22 27;
+    --accent-foreground: 1 0 0;
+    --destructive: 0.53 0.22 27;
+    --destructive-foreground: 1 0 0;
+    --border: 1 0 0 / 10%;
+    --input: 1 0 0 / 15%;
+    --ring: 0.49 0.22 27;
+    --chart-1: 0.488 0.243 264.376;
+    --chart-2: 0.696 0.17 162.48;
+    --chart-3: 0.769 0.188 70.08;
+    --chart-4: 0.627 0.265 303.9;
+    --chart-5: 0.645 0.246 16.439;
+    --sidebar: 0.17 0 0;
+    --sidebar-foreground: 0.985 0 0;
+    --sidebar-primary: 0.49 0.22 27;
+    --sidebar-primary-foreground: 0.985 0 0;
+    --sidebar-accent: 0.2 0 0;
+    --sidebar-accent-foreground: 0.985 0 0;
+    --sidebar-border: 1 0 0 / 10%;
+    --sidebar-ring: 0.45 0 0;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: "Oswald", sans-serif;
+  }
+
+  .animate-fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .animate-fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .animate-fade-in {
+    opacity: 0;
+    transition: opacity 0.7s ease;
+  }
+
+  .animate-fade-in.visible {
+    opacity: 1;
+  }
+
+  .card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .gallery-img-wrap {
+    overflow: hidden;
+  }
+
+  .gallery-img-wrap img {
+    transition: transform 0.4s ease;
+  }
+
+  .gallery-img-wrap:hover img {
+    transform: scale(1.08);
+  }
+
+  .text-red-brand {
+    color: oklch(var(--red));
+  }
+
+  .bg-red-brand {
+    background-color: oklch(var(--red));
+  }
+
+  .bg-red-brand-bright {
+    background-color: oklch(var(--red-bright));
+  }
+
+  .bg-blue-brand {
+    background-color: oklch(var(--blue-dark));
+  }
+
+  .bg-dark-brand {
+    background-color: oklch(var(--dark));
+  }
+
+  .bg-dark-card-brand {
+    background-color: oklch(var(--dark-card));
+  }
+
+  .bg-whatsapp {
+    background-color: oklch(var(--whatsapp));
+  }
+
+  .text-whatsapp {
+    color: oklch(var(--whatsapp));
+  }
+
+  .border-red-brand {
+    border-color: oklch(var(--red));
+  }
+
+  .hover\:bg-red-brand-bright:hover {
+    background-color: oklch(var(--red-bright));
+  }
+}
